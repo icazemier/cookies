@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^4.21.2",
+    "morgan": "^1.10.0"
+  },
+  "exports": "./src/index.mjs",
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+  },
+  "scripts": {
+    "start": "node ./src/index.mjs"
+  }
+}
